@@ -46,7 +46,7 @@ examples/instances).
 Now split the dataset examples into two with name training_dataset and testing_dataset. Assign
 the first 250 examples as training_dataset and 62 examples as testing_dataset.
 
-### 2.Feature selection
+## 2.Feature selection
 You are required to build different trees, each of them built over a specific extraction of the
 observations from the dataset and a specific extraction of the features. Not every tree sees all the
 features or all the observations, and this guarantees that the trees are de-correlated and therefore
@@ -62,7 +62,7 @@ how well it alone classifies the training examples. The “best attribute” is 
 root node of the tree by calculating the information gain and entropy.
 How to calculate information gain and entropy?
 
-## 2.1. Instructions for Feature selection
+### 2.1. Instructions for Feature selection
 Every training example contains around 16 features (subject grades, waring and cgpa) with 1
 Label class (Data structure).
 Step 1: Get the Windows Size in Int type variable
@@ -87,7 +87,7 @@ Step 6a: A branch with the entropy of 0 is a leaf node.
 Step 6b: A branch with entropy more than 0 needs further splitting.
 Step 7: This function runs recursively on the non-leaf branches until all data is classified.
 
-### 3. Training Model (Generate the forest of trees)
+## 3. Training Model (Generate the forest of trees)
 Here, you are going to generate multiple decision trees, every tree must predict the grade of data
 structures, collect the predictions from every decision tree and return mode (majority voting) of
 the predictions that will be your final grade of data structure, if the two or more classes have the
@@ -95,7 +95,7 @@ same mode, then all the classes with same mode will be your possible grades. Pri
 generation, you have must have the following parameters Windows_Size and No_of_trees in
 order to generate the trees.
 
-## 3.1. Instructions to generate the trees
+### 3.1. Instructions to generate the trees
 Repeat the same process of feature selection on every Tree but each tree must be distinct from
 the previously generated tree, each time after generating 1 tree shift the Window by 2 in round
 robin fashion and don’t select the root node that is already selected.
@@ -116,7 +116,7 @@ predictions will be your final grade of data structure. After completing these s
 model is ready for testing.
 
 
-### 4. Testing (Prediction Phase)
+## 4. Testing (Prediction Phase)
 
 Never evaluate performance on training data. The conclusion would be optimistically biased.
 therefore, used the testing_dataset on testing instances. Write a function that expect the test
@@ -126,26 +126,26 @@ results with real values available in the testing examples with the name of CS20
 structures) and calculate the prediction accuracy, Formula=link. Here is the is entire model for
 your better understanding.
 
-### 5. Traversals to display the trees
+## 5. Traversals to display the trees
 
 At this point you have successfully trained and test the model. Now all you have to do is push a
 test instance in your trained model which creates the trees depending upon the parameters (
 Windows_Size and No_of_trees) and display the all trees for single instance using three different
 travels(Inorder , Preorder, Postorder).
-## 5.1. Inorder traversal
+### 5.1. Inorder traversal
  First, visit all the nodes in the left subtree
  Then the root node
  Visit all the nodes in the right subtree
-## 5.2. Preorder traversal
+### 5.2. Preorder traversal
  Visit root node
  Visit all the nodes in the left subtree
  Visit all the nodes in the right subtree
-## .3. Postorder traversal
+### .3. Postorder traversal
  Visit all the nodes in the left subtree
  Visit all the nodes in the right subtree
  Visit the root node
 
-### 6. Display the predictions of trees with mode
+## 6. Display the predictions of trees with mode
 
 Push a test instance in your trained model which creates the trees depending upon the parameters
 (Windows_Size and No_of_trees) and display prediction of each tree with mode (Majority
